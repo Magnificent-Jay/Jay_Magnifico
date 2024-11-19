@@ -4,11 +4,11 @@ import streamlit as st
 st.title("Youtube video downloader")
 
 # Set the columns of the widgets
-col1, col2 = st.columns([3, 1])
+col1, col2 = st.columns([10, 1])
 
 
 # Get text input from the user
-user_input = col1.text_input("Enter the url of the youtube video:")
+user_input = col1.text_input("Enter the video url:")
 enter = col2.button("Convert")
 
 if enter:
