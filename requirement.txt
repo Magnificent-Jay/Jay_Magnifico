@@ -1,4 +1,4 @@
 streamlit
 pytube
 os
-yt_dlp
+yt-dlp
