@@ -3,7 +3,7 @@ import streamlit as st
 # Set the title of the web app
 st.title("Youtube video downloader")
 
-st.write("Enter the url of the youtube video: ")
+#st.write("Enter the url of the youtube video: ")
 
 # Set the columns of the text widget
 col1, col2 = st.columns([3, 1])
