@@ -5,12 +5,8 @@ st.title("Youtube video downloader")
 
 st.write("Enter the url of the youtube video: ")
 
-# Set the columns of the text widget
-col1, col2 = st.columns([3, 1])
-
 # Get text input from the user
-user_input = col1.text_input("")
-oi = col2.write("")
+user_input = text_input("")
 enter = col2.button("Convert")
 
 if enter:
