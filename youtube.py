@@ -6,8 +6,8 @@ st.title("Youtube video downloader")
 st.write("Enter the url of the youtube video: ")
 
 # Get text input from the user
-user_input = text_input("")
-enter = col2.button("Convert")
+user_input = st.text_input("")
+enter = st.button("Convert")
 
 if enter:
     if user_input:
