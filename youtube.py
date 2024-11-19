@@ -1,6 +1,6 @@
 import os
 import streamlit as st
-from ytdlp import YoutubeDL
+from yt_dlp import YoutubeDL
 
 def get_resolutions(video_url):
     """Retrieve available resolutions for a given YouTube video."""
