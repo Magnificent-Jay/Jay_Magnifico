@@ -9,7 +9,7 @@ st.write("Enter the url of the youtube video: ")
 col1, col2 = st.columns([10, 1])
 
 # Get text input from the user
-user_input = col1.text_input()
+user_input = col1.text_input("")
 enter = col2.button("Convert")
 
 if enter:
