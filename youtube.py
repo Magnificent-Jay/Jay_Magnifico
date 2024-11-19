@@ -2,6 +2,18 @@ import os
 import streamlit as st
 from yt_dlp import YoutubeDL
 
+import subprocess
+
+try:
+    import yt_dlp
+except ModuleNotFoundError:
+    print("yt-dlp is not installed. Installing now...")
+    subprocess.check_call(["pip", "install", "yt-dlp"])
+finally:
+    import yt_dlp
+    print("yt-dlp is successfully imported!")
+
+
 def get_resolutions(video_url):
     """Retrieve available resolutions for a given YouTube video."""
     ydl_opts = {'quiet': True}
