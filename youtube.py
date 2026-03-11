@@ -4,7 +4,7 @@ from yt_dlp import YoutubeDL
 
 def get_resolutions(video_url):
     """Retrieve available resolutions for a given YouTube video."""
-    ydl_opts = {'quiet': True}
+    ydl_opts = {'quiet': True, }
     with YoutubeDL(ydl_opts) as ydl:
         video_info = ydl.extract_info(video_url, download=False)
         formats = video_info['formats']
@@ -23,6 +23,20 @@ def download_video(video_url, format_id):
         'format': format_id,
         'outtmpl': os.path.join(download_path, '%(title)s.%(ext)s'),
         'quiet': False,
+        # 1. Add a real-world User-Agent
+        'user_agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36',
+        # 2. Tell YouTube to use web/iOS clients instead of Android
+        'extractor_args': {
+            'youtube': {
+                'player_client': ['web', 'ios'],
+                'player_skip': ['webpage', 'configs']
+            }
+        },
+        # 3. Add headers to look more like a browser
+        'http_headers': {
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+            'Accept-Language': 'en-us,en;q=0.5',
+        }
     }
 
     with YoutubeDL(ydl_opts) as ydl:
