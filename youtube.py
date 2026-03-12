@@ -49,15 +49,15 @@ st.title("YouTube Downloader")
 # Input for YouTube URL
 video_url = st.text_input("Enter YouTube video or playlist URL:")
 
-if video_url:
-    if st.button("Get Resolutions"):
-        try:
-            resolutions, title = get_resolutions(video_url)
-            st.session_state["resolutions"] = resolutions
-            st.session_state["title"] = title
-            st.success(f"Available resolutions fetched for: {title}")
-        except Exception as e:
-            st.error(f"Error fetching resolutions: {e}")
+
+if st.button("Get Resolutions"):
+    try:
+        resolutions, title = get_resolutions(video_url)
+        st.session_state["resolutions"] = resolutions
+        st.session_state["title"] = title
+        st.success(f"Available resolutions fetched for: {title}")
+    except Exception as e:
+        st.error(f"Error fetching resolutions: {e}")
 
 # Display Resolutions Dropdown
 if "resolutions" in st.session_state:
